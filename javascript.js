@@ -17,13 +17,24 @@ function makeBoxes(inputNum){
         boxes.style.paddingBottom = boxRatio;
     }   
     getBoxes().forEach(box => {
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'black';
+        let defaultOpacity = 1;//set base opacity
+        box.addEventListener('mouseover', () => {//add event listener for every mouse-over
+            
+            box.style.backgroundColor = randomRGB();//get a random rgb value
+            defaultOpacity -= 0.1;//decrease the box opacity
+            box.style.opacity = defaultOpacity;
+            
         });
     });
 }
-function getBoxes(){
+function getBoxes(){//use for selecting all box divs
     return document.querySelectorAll('.box');
+}
+function randomRGB() {//provides a random RGB string
+const R = Math.floor(Math.random() * 256);
+const G = Math.floor(Math.random() * 256);
+const B = Math.floor(Math.random() * 256);
+return `rgb(${R}, ${G}, ${B})`;
 }
 
 const startButton = document.getElementById('start');//upon clicking start button

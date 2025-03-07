@@ -4,10 +4,11 @@
     justify-content: space-evenly;
     align-content: flex-start;
     min-width: 960px;
+    background-color: black;
 
 }
 .box {
     
     flex-grow: 1;
-    background-color: gray;
+    background-color: rgb(224, 224, 224);
 }
